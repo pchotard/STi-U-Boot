@@ -1,0 +1,11 @@
+menu "USB PHY drivers"
+
+config STI_PHY_USB
+	bool "STMicroelectronics USB2 picoPHY driver for STiH407 family"
+	default n
+	help
+	  This is the generic phy driver for the picoPHY ports
+	  used by USB2 and USB3 Host controllers available on
+	  STiH407 SoC families.
+
+endmenu
