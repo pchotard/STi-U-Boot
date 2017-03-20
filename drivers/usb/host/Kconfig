@@ -168,6 +168,15 @@ config USB_OHCI_GENERIC
 	---help---
 	  Enables support for generic OHCI controller.
 
+config USB_OHCI_STI
+	bool "Support for STMicroelectronics OHCI USB controller"
+	depends on ARCH_STI
+	depends on OF_CONTROL
+	depends on DM_USB
+	select USB_HOST
+	---help---
+	  Enables support for the on-chip OHCI controller on STMicroelectronics SoCs.
+
 endif # USB_OHCI_HCD
 
 config USB_UHCI_HCD
