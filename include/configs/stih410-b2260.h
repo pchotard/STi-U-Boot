@@ -25,13 +25,32 @@
 /* Libraries */
 #define CONFIG_MD5
 
-#define CONFIG_BOOTARGS							\
-	"console=ttyS0,115200 earlyprintk consoleblank=0 ignore_loglevel"
-
+#include <config_distro_defaults.h>
 /* Environment */
-#define CONFIG_EXTRA_ENV_SETTINGS \
-	"board= B2260" \
-	"load_addr= #CONFIG_SYS_LOAD_ADDR \0"
+
+/* we assume that rootfs is located on second partition formatted in ext4 */
+#define CONFIG_BOOTARGS			\
+	"console=ttyAS1,115200 CONSOLE=/dev/ttyAS1 consoleblank=0 root=/dev/mmcblk0p2 rootfstype=ext4 rw rootwait mem=992M@0x40000000 vmalloc=256m"
+
+#define CONFIG_LOADADDR			CONFIG_SYS_LOAD_ADDR
+
+#define CONFIG_ENV_VARS_UBOOT_CONFIG
+
+#define BOOT_TARGET_DEVICES(func) \
+	func(MMC, mmc, 0) \
+	func(USB, usb, 0) \
+	func(DHCP, dhcp, na)
+#include <config_distro_bootcmd.h>
+#define CONFIG_BOOTFILE			"uImage"
+#define CONFIG_EXTRA_ENV_SETTINGS				\
+			"kernel_name=uImage\0"			\
+			"kernel_addr_r=0x60000000\0"		\
+			"fdtfile=stih410-b2260.dtb\0"		\
+			"fdt_addr_r=0x47000000\0"		\
+			"fdt_high=0xffffffffffffffff\0"		\
+			"initrd_high=0xffffffffffffffff\0"	\
+			BOOTENV
+
 
 #define CONFIG_ENV_IS_NOWHERE
 #define CONFIG_ENV_SIZE 0x4000
