@@ -47,6 +47,7 @@
 			"kernel_addr_r=0x40000000\0"		\
 			"fdtfile=stih410-b2260.dtb\0"		\
 			"fdt_addr_r=0x47000000\0"		\
+			"scriptaddr=0x50000000\0"		\
 			"fdt_high=0xffffffffffffffff\0"		\
 			"initrd_high=0xffffffffffffffff\0"	\
 			BOOTENV
