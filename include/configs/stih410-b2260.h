@@ -44,7 +44,7 @@
 #define CONFIG_BOOTFILE			"uImage"
 #define CONFIG_EXTRA_ENV_SETTINGS				\
 			"kernel_name=uImage\0"			\
-			"kernel_addr_r=0x60000000\0"		\
+			"kernel_addr_r=0x40000000\0"		\
 			"fdtfile=stih410-b2260.dtb\0"		\
 			"fdt_addr_r=0x47000000\0"		\
 			"fdt_high=0xffffffffffffffff\0"		\
