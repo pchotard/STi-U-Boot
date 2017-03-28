@@ -1,0 +1,10 @@
+menu "USB PHY drivers"
+
+config USB_PHY
+	bool "Enable driver model for USB PHY drivers"
+	depends on DM
+	help
+	  Enable driver model for USB PHY access. It defines basic
+	  init and exit API.
+
+endmenu
