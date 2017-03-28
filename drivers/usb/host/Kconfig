@@ -38,6 +38,14 @@ config USB_XHCI_ROCKCHIP
 	help
 	  Enables support for the on-chip xHCI controller on Rockchip SoCs.
 
+config USB_XHCI_STI
+	bool "Support for STMicroelectronics STiH407 family on-chip xHCI USB controller"
+	depends on ARCH_STI
+	default y
+	help
+	  Enables support for the on-chip xHCI controller on STMicroelectronics
+	  STiH407 family SoCs.
+
 config USB_XHCI_ZYNQMP
 	bool "Support for Xilinx ZynqMP on-chip xHCI USB controller"
 	depends on ARCH_ZYNQMP
