@@ -9,3 +9,4 @@ obj-$(CONFIG_USB_PHY) += usb_phy_uclass.o
 obj-$(CONFIG_TWL4030_USB) += twl4030.o
 obj-$(CONFIG_OMAP_USB_PHY) += omap_usb_phy.o
 obj-$(CONFIG_ROCKCHIP_USB2_PHY) += rockchip_usb2_phy.o
+obj-$(CONFIG_STI_USB_PHY) += sti_usb_phy.o

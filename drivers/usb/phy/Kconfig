@@ -7,4 +7,13 @@ config USB_PHY
 	  Enable driver model for USB PHY access. It defines basic
 	  init and exit API.
 
+config STI_USB_PHY
+	bool "STMicroelectronics USB2 picoPHY driver for STiH407 family"
+	depends on USB_PHY
+	default y if ARCH_STI
+	help
+	  This is the generic phy driver for the picoPHY ports
+	  used by USB2 and USB3 Host controllers available on
+	  STiH407 SoC families.
+
 endmenu
